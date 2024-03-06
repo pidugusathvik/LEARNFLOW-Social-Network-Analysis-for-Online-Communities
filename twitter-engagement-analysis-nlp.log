@@ -1,0 +1,187 @@
+9.7s 1 /kaggle/input/tweets-and-user-engagement/Twitterdatainsheets.csv
+11.0s 2 /tmp/ipykernel_19/317565534.py:1: DtypeWarning: Columns (3,4,5,6,12,14) have mixed types. Specify dtype option on import or set low_memory=False.
+11.0s 3 df = pd.read_csv('/kaggle/input/tweets-and-user-engagement/Twitterdatainsheets.csv')
+11.4s 4 Missing Values:
+11.4s 5 index                0
+11.4s 6 TweetID              4
+11.4s 7 Weekday              3
+11.4s 8 Hour            100120
+11.4s 9 Day             100114
+11.4s 10 Lang            100162
+11.4s 11 IsReshare       106295
+11.4s 12 Reach           106295
+11.4s 13 RetweetCount    106295
+11.4s 14 Likes           106295
+11.4s 15 Klout           106295
+11.4s 16 Sentiment       106295
+11.4s 17 text            106295
+11.4s 18 LocationID      106295
+11.4s 19 UserID          106295
+11.4s 20 dtype: int64
+11.4s 21 
+11.4s 22 Data Types:
+11.4s 23 index             int64
+11.4s 24 TweetID          object
+11.4s 25 Weekday          object
+11.4s 26 Hour             object
+11.4s 27 Day              object
+11.4s 28 Lang             object
+11.4s 29 IsReshare        object
+11.4s 30 Reach           float64
+11.4s 31 RetweetCount    float64
+11.4s 32 Likes           float64
+11.4s 33 Klout           float64
+11.4s 34 Sentiment       float64
+11.4s 35 text             object
+11.4s 36 LocationID      float64
+11.4s 37 UserID           object
+11.4s 38 dtype: object
+11.6s 39 Shape after handling missing values: (106128, 15)
+12.0s 40 
+12.0s 41 Data Types after conversion:
+12.0s 42 index             int64
+12.0s 43 TweetID          object
+12.0s 44 Weekday          object
+12.0s 45 Hour             object
+12.0s 46 Day              object
+12.0s 47 Lang             object
+12.0s 48 IsReshare        object
+12.0s 49 Reach           float64
+12.0s 50 RetweetCount    float64
+12.0s 51 Likes           float64
+12.0s 52 Klout           float64
+12.0s 53 Sentiment       float64
+12.0s 54 text             object
+12.0s 55 LocationID      float64
+12.0s 56 UserID           object
+12.0s 57 dtype: object
+12.0s 58 
+12.0s 59 Missing Values after cleaning:
+12.0s 60 index              0
+12.0s 61 TweetID            0
+12.0s 62 Weekday            0
+12.0s 63 Hour            6128
+12.0s 64 Day             6128
+12.0s 65 Lang               0
+12.0s 66 IsReshare       6128
+12.0s 67 Reach           6128
+12.0s 68 RetweetCount    6128
+12.0s 69 Likes           6128
+12.0s 70 Klout           6128
+12.0s 71 Sentiment       6128
+12.0s 72 text            6128
+12.0s 73 LocationID      6128
+12.0s 74 UserID          6128
+12.0s 75 dtype: int64
+12.2s 76 index                TweetID   Weekday  Hour   Day Lang IsReshare   Reach  \
+12.2s 77 0      0  tw-682712873332805633  Thursday  17.0  31.0   en       0.0    44.0
+12.2s 78 1      1  tw-682713045357998080  Thursday  17.0  31.0   en       1.0  1810.0
+12.2s 79 2      2  tw-682713219375476736  Thursday  17.0  31.0   en       0.0   282.0
+12.2s 80 3      3  tw-682713436967579648  Thursday  17.0  31.0   en       0.0  2087.0
+12.2s 81 4      4  tw-682714048199311366  Thursday  17.0  31.0   en       0.0   953.0
+12.2s 82 
+12.2s 83 RetweetCount  Likes  Klout  Sentiment  \
+12.2s 84 0           0.0    0.0   35.0        0.0
+12.2s 85 1           5.0    0.0   53.0        2.0
+12.2s 86 2           0.0    0.0   47.0        0.0
+12.2s 87 3           4.0    0.0   53.0        0.0
+12.2s 88 4           0.0    0.0   47.0        0.0
+12.2s 89 
+12.2s 90 text  LocationID  \
+12.2s 91 0  We are hiring: Senior Software Engineer - Prot...      3751.0
+12.2s 92 1  RT @CodeMineStatus: This is true Amazon Web Se...      3989.0
+12.2s 93 2  Devops Engineer Aws Ansible Cassandra Mysql Ub...      3741.0
+12.2s 94 3  Happy New Year to all those AWS instances of o...      3753.0
+12.2s 95 4  Amazon is hiring! #Sr. #International Tax Mana...      3751.0
+12.2s 96 
+12.2s 97 UserID
+12.2s 98 0    tw-40932430
+12.2s 99 1  tw-3179389829
+12.2s 100 2  tw-4624808414
+12.2s 101 3   tw-356447127
+12.2s 102 4  tw-3172686669
+14.1s 103 Basic Statistics for Numeric Columns:
+14.1s 104 Reach   RetweetCount          Likes          Klout  \
+14.1s 105 count  1.061280e+05  106128.000000  106128.000000  106128.000000
+14.1s 106 mean   8.542396e+03       8.052750       0.152770      40.389260
+14.1s 107 std    8.607220e+04      94.996043       2.507931      13.236958
+14.1s 108 min    0.000000e+00       0.000000       0.000000       0.000000
+14.1s 109 25%    1.670000e+02       0.000000       0.000000      33.000000
+14.1s 110 50%    5.060000e+02       1.000000       0.000000      42.000000
+14.1s 111 75%    2.056000e+03       4.000000       0.000000      48.000000
+14.1s 112 max    1.034245e+07   26127.000000     133.000000      99.000000
+14.1s 113 
+14.1s 114 Sentiment     LocationID
+14.1s 115 count  106128.000000  106128.000000
+14.1s 116 mean        0.380921    2836.163440
+14.1s 117 std         1.015895    1284.371804
+14.1s 118 min        -6.000000       1.000000
+14.1s 119 25%         0.000000    1664.000000
+14.1s 120 50%         0.000000    3083.000000
+14.1s 121 75%         0.380921    3768.000000
+14.1s 122 max         7.333333    6289.000000
+136.3s 123 Requirement already satisfied: nltk in /opt/conda/lib/python3.10/site-packages (3.2.4)
+136.4s 124 Requirement already satisfied: six in /opt/conda/lib/python3.10/site-packages (from nltk) (1.16.0)
+150.3s 125 Note: you may need to restart the kernel to use updated packages.
+151.7s 126 /opt/conda/lib/python3.10/site-packages/nltk/twitter/__init__.py:20: UserWarning: The twython library has not been installed. Some functionality from the twitter package will not be available.
+151.7s 127 warnings.warn("The twython library has not been installed. "
+151.8s 128 [nltk_data] Downloading package vader_lexicon to
+151.8s 129 [nltk_data]     /usr/share/nltk_data...
+151.8s 130 [nltk_data]   Package vader_lexicon is already up-to-date!
+181.2s 131 /tmp/ipykernel_19/3152827083.py:11: SettingWithCopyWarning:
+181.2s 132 A value is trying to be set on a copy of a slice from a DataFrame.
+181.2s 133 Try using .loc[row_indexer,col_indexer] = value instead
+181.2s 134 
+181.2s 135 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+181.2s 136 df_cleaned['SentimentScore'] = df_cleaned['text'].dropna().apply(lambda x: sia.polarity_scores(x)['compound'])
+182.1s 137 Text of the specific tweet:
+182.1s 138 Sr Devops Engineer Aws Jobs in Los Angeles CA #LosAngeles #CA #jobs #jobsearch https://www.jobfindly.com/sr-devops-engineer-aws-jobs-los-angeles-ca.html
+182.1s 139 
+182.1s 140 Sentiment Score for the specific tweet: 0.0
+182.3s 141 Text of the specific tweet:
+182.3s 142 Great Job Opportunity: Technical Project Manager (Java &amp; AWS) in Hyderabad India http://www.bullhornreach.com/job/2027084_technical-project-manager-java-aws-hyderabad-india?utm_campaign=v1&shortlink=4163998&utm_content=1&utm_source=twitter.com&referer=None&utm_medium=referral #job
+182.3s 143 
+182.3s 144 Sentiment Score for the specific tweet: 0.7845
+182.3s 145 Sentiment Label for the specific tweet: positive
+182.4s 146 Text of the specific tweet:
+182.4s 147 RT @awscloud: Now continue rollbacks to your CloudFormation stack even after the rollback has failed: http://aws.amazon.com/about-aws/whats-new/2016/01/aws-cloudformation-adds-override-for-failed-update-rollbacks/?sc_channel=sm&sc_campaign=launches_2016&sc_publisher=tw_go&sc_content=cf_cont_rollback&sc_country=global&sc_geo=global&sc_category=cloudformation&adbsc=social_launches_20160125_57602166&adbid=691701527472254976&adbpl=tw&adbpr=66780587 https://t.co/
+182.4s 148 
+182.4s 149 Sentiment Score for the specific tweet: -0.5106
+182.4s 150 Sentiment Label for the specific tweet: negative
+184.6s 151 Requirement already satisfied: gensim in /opt/conda/lib/python3.10/site-packages (4.3.2)
+184.6s 152 Requirement already satisfied: numpy>=1.18.5 in /opt/conda/lib/python3.10/site-packages (from gensim) (1.24.3)
+184.6s 153 Requirement already satisfied: scipy>=1.7.0 in /opt/conda/lib/python3.10/site-packages (from gensim) (1.11.4)
+184.6s 154 Requirement already satisfied: smart-open>=1.8.1 in /opt/conda/lib/python3.10/site-packages (from gensim) (6.3.0)
+197.2s 155 Note: you may need to restart the kernel to use updated packages.
+359.5s 156 Topic 0: 0.104*"&" + 0.070*":" + 0.048*"?" + 0.043*"http" + 0.040*"amazon"
+359.5s 157 Topic 1: 0.110*":" + 0.098*"#" + 0.058*"aws" + 0.044*"@" + 0.042*"http"
+359.5s 158 Topic 2: 0.051*"." + 0.047*"aws" + 0.043*"@" + 0.026*"the" + 0.025*"a"
+359.5s 159 Topic 3: 0.128*"#" + 0.075*"%" + 0.045*":" + 0.035*"aws" + 0.035*"&"
+359.5s 160 Topic 4: 0.138*"&" + 0.089*":" + 0.035*"https" + 0.029*"?" + 0.025*"@"
+359.6s 161 [nltk_data] Downloading package punkt to /usr/share/nltk_data...
+359.8s 162 [nltk_data]   Package punkt is already up-to-date!
+491.4s 163 Topic 0: 0.059*"aws" + 0.042*"to" + 0.034*"the" + 0.027*"https" + 0.024*"rt"
+491.4s 164 Topic 1: 0.079*"aws" + 0.049*"https" + 0.039*"rt" + 0.035*"http" + 0.026*"with"
+491.4s 165 Topic 2: 0.082*"http" + 0.078*"amazon" + 0.048*"services" + 0.047*"aws" + 0.045*"web"
+491.4s 166 Topic 3: 0.065*"aws" + 0.064*"https" + 0.053*"http" + 0.045*"rt" + 0.037*"awscloud"
+491.4s 167 Topic 4: 0.074*"aws" + 0.058*"http" + 0.045*"cloud" + 0.040*"azure" + 0.038*"google"
+496.7s 168 /opt/conda/lib/python3.10/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+496.7s 169 warn(
+496.7s 170 [NbConvertApp] WARNING | Config option `kernel_spec_manager_class` not recognized by `NbConvertApp`.
+496.7s 171 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+497.3s 172 [NbConvertApp] Writing 2156218 bytes to __notebook__.ipynb
+499.4s 173 /opt/conda/lib/python3.10/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+499.4s 174 warn(
+499.4s 175 [NbConvertApp] WARNING | Config option `kernel_spec_manager_class` not recognized by `NbConvertApp`.
+499.5s 176 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+500.7s 177 [NbConvertApp] Support files will be in __results___files/
+500.7s 178 [NbConvertApp] Making directory __results___files
+500.7s 179 [NbConvertApp] Making directory __results___files
+500.7s 180 [NbConvertApp] Making directory __results___files
+500.7s 181 [NbConvertApp] Making directory __results___files
+500.7s 182 [NbConvertApp] Making directory __results___files
+500.7s 183 [NbConvertApp] Making directory __results___files
+500.7s 184 [NbConvertApp] Making directory __results___files
+500.7s 185 [NbConvertApp] Making directory __results___files
+500.7s 186 [NbConvertApp] Making directory __results___files
+500.7s 187 [NbConvertApp] Writing 352533 bytes to __results__.html
